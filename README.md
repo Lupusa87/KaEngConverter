@@ -18,8 +18,8 @@
 ## 🖥 Live Demo
 
 👉 **GitHub Pages:**  
-`https://lupusa87.github.io/KaEngConverter/`
-
+``
+**Live at:** https://lupusa87.github.io/KaEngConverter/
 
 
 
@@ -30,10 +30,10 @@ Frontend / Mobile Developer
 React Native • TypeScript • Expo • JavaScript
 
 ### 🔗 Social Profiles
-- **Email:** your-email@example.com  
-- **LinkedIn:** https://linkedin.com/in/YOUR_PROFILE  
-- **YouTube:** https://youtube.com/YOUR_CHANNEL  
-- **Facebook:** https://facebook.com/YOUR_PROFILE  
+- **Email:** VakhtangiAbashidze@gmail.com  
+- **LinkedIn:** https://www.linkedin.com/in/vakhtangi-abashidze-652887140  
+- **YouTube:** https://www.youtube.com/@vakhtangiabashidze8559  
+- **Facebook:** https://www.facebook.com/share/1JAEXpjttU/?mibextid=wwXIfr  
 
 
 
