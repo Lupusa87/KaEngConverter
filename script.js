@@ -114,7 +114,6 @@ inputEl.addEventListener("input", () => {
 // საწყისი გაშვება
 runConversion();
 
-
 /* 🌗 Dark / Light Theme Toggle */
 const themeToggle = document.getElementById("themeToggle");
 
@@ -138,35 +137,63 @@ themeToggle.addEventListener("click", () => {
   }
 });
 
+
+async function updateVisitorCount() {
+  const el = document.getElementById("visitCount");
+  if (!el) return;
+
+  try {
+    const res = await fetch(
+      "https://counterapi.com/api/lupusa87vakhtangiabashidze-ka-eng/view/ka-eng-converter"
+    );
+    const data = await res.json();
+    el.textContent = data.value;
+  } catch (err) {
+    console.error("Counter error:", err);
+    el.textContent = "შეცდომა";
+  }
+}
+
+// run after page loads
+document.addEventListener("DOMContentLoaded", updateVisitorCount);
+
+
 const year = new Date().getFullYear();
 document.getElementById("year").textContent = year;
 
-
-
 /* SHARE BUTTONS */
 const pageUrl = encodeURIComponent(window.location.href);
-const pageTitle = encodeURIComponent("Ka ⇄ Eng კლავიატურის ავტომატური კონვერტორი");
+const pageTitle = encodeURIComponent(
+  "Ka ⇄ Eng კლავიატურის ავტომატური კონვერტორი"
+);
 
-document.querySelector('.share-button.fb').href =
-  `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
+document.querySelector(
+  ".share-button.fb"
+).href = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
 
-document.querySelector('.share-button.x').href =
-  `https://twitter.com/intent/tweet?url=${pageUrl}&text=${pageTitle}`;
+document.querySelector(
+  ".share-button.x"
+).href = `https://twitter.com/intent/tweet?url=${pageUrl}&text=${pageTitle}`;
 
-document.querySelector('.share-button.linkedin').href =
-  `https://www.linkedin.com/shareArticle?mini=true&url=${pageUrl}&title=${pageTitle}`;
+document.querySelector(
+  ".share-button.linkedin"
+).href = `https://www.linkedin.com/shareArticle?mini=true&url=${pageUrl}&title=${pageTitle}`;
 
-document.querySelector('.share-button.whatsapp').href =
-  `https://wa.me/?text=${pageTitle}%20${pageUrl}`;
+document.querySelector(
+  ".share-button.whatsapp"
+).href = `https://wa.me/?text=${pageTitle}%20${pageUrl}`;
 
-document.querySelector('.share-button.telegram').href =
-  `https://t.me/share/url?url=${pageUrl}&text=${pageTitle}`;
+document.querySelector(
+  ".share-button.telegram"
+).href = `https://t.me/share/url?url=${pageUrl}&text=${pageTitle}`;
 
-document.querySelector('.share-button.copylink').addEventListener("click", async () => {
-  try {
-    await navigator.clipboard.writeText(window.location.href);
-    //alert("ბმული დაკოპირდა!");
-  } catch {
-    alert("ვერ მოხერხდა ბმულის კოპირება");
-  }
-});
+document
+  .querySelector(".share-button.copylink")
+  .addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      //alert("ბმული დაკოპირდა!");
+    } catch {
+      alert("ვერ მოხერხდა ბმულის კოპირება");
+    }
+  });
