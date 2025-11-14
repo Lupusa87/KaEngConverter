@@ -1,0 +1,434 @@
+/* ძირითადი სტილები */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: #f5f5f5;
+  color: #0f172a;
+}
+
+.container {
+ 
+  max-width: 700px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* ზედა ბლოკი: სათაური, ვერსია, ავტორი */
+.top-block {
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+h1 {
+  font-size: 1.4rem;
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+  color: #1d4ed8; /* ოდნავ უფრო კაშკაშა ლურჯი სათაურისთვის */
+}
+
+.version {
+  font-size: 0.85rem;
+  color: #4b5563;
+  margin-top: 0.8rem;
+}
+
+.top-meta {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-top: 0.8rem;
+}
+
+.hint {
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin-bottom: 1rem;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+textarea {
+  width: 100%;
+  min-height: 100px;
+  resize: vertical;
+  padding: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  box-sizing: border-box;
+  color: #0f172a;
+}
+
+textarea[readonly] {
+  background: #f9fafb;
+}
+
+.row {
+  margin-bottom: 1.5rem;
+}
+
+.status {
+  font-size: 0.85rem;
+  color: #059669; /* მწვანე ტექსტი */
+  min-height: 1em;
+}
+
+.status-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -8px; /* optional: pulls it closer */
+  margin-bottom: 16px;
+}
+
+body.dark .status {
+  color: #67e8f9;
+}
+
+/* label + ჩასმა ღილაკი ერთ ხაზზე */
+.label-with-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.label-with-button label {
+  color: #1d4ed8; /* dark blue */
+}
+
+body.dark .label-with-button label {
+  color: #e2e8f0; 
+}
+
+
+.row > label {
+  color: #1d4ed8; /* dark blue */
+}
+
+body.dark .row > label {
+  color: #e2e8f0; 
+}
+
+/* ჩასმა ღილაკი */
+.paste-btn {
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 4px 12px;
+  margin-bottom: 4px;
+  font-size: 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.paste-btn:hover {
+  background: #059669;
+  transform: translateY(-1px);
+}
+
+/* პროფილის სექცია */
+
+.profile {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid #e5e7eb;
+  margin-bottom: 0; /* reduce bottom spacing */
+  padding-bottom: 0;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.profile-name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: darkblue;
+}
+
+.profile-description {
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin-top: 2px;
+  margin-bottom: 14px;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+  justify-content: center; 
+}
+
+.social-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  border: 1px solid #e5e7eb;
+  color: #111827;
+  background: #f9fafb;
+  transition: all 0.15s ease;
+  justify-content: center; 
+}
+
+.social-button:hover {
+  background: #e0e7ff;
+  transform: translateY(-1px);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.material-icons {
+  font-size: 18px;
+}
+
+/* ბრენდის ფერები */
+.social-button.youtube i {
+  color: #FF0000;
+}
+
+.social-button.linkedin i {
+  color: #0A66C2;
+}
+
+.social-button.github i {
+  color: #000000;
+}
+
+.social-button.facebook i {
+  color: #1877F2;
+}
+
+.social-button.email .material-icons {
+  color: #0284C7; /* ცისფერი ელფოსტისთვის */
+}
+
+.social-button i.fa-brands {
+  font-size: 18px;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 16px;
+  }
+}
+
+/* 🌙 თემა — Dark Mode */
+body.dark {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+body.dark .container {
+  background: #1e293b;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+body.dark textarea {
+  background: #0f172a;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+body.dark textarea[readonly] {
+  background: #1e293b;
+}
+
+body.dark h1 {
+  color: #e2e8f0; /* very light gray / almost white */
+}
+
+body.dark .profile-name {
+  color: #e2e8f0; /* very light gray / almost white */
+}
+
+
+body.dark .hint,
+body.dark .profile-description,
+body.dark .version,
+body.dark .top-meta {
+  color: #94a3b8;
+}
+
+body.dark .social-button {
+  background: #334155;
+  color: #e2e8f0;
+  border-color: #475569;
+}
+
+body.dark .social-button:hover {
+  background: #475569;
+}
+
+body.dark .paste-btn {
+  background: #0ea5e9;
+}
+
+body.dark .paste-btn:hover {
+  background: #0284c7;
+}
+
+
+
+
+/* 🌗 Toggle button style */
+.theme-toggle {
+  margin-top: 15px;
+  background: #f1f3f5;
+  border: none;
+  padding: 3px 6px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background: #cbd5e1;
+  transform: translateY(-1px);
+}
+
+body.dark .theme-toggle {
+  background: #334155;
+  color: #e2e8f0;
+}
+
+body.dark .theme-toggle:hover {
+  background: #475569;
+}
+
+
+.share-title {
+  margin-top: 30px;
+   margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color:darkblue;
+}
+
+body.dark .share-title {
+  color: #e2e8f0;
+}
+
+.share-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.share-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+  background: #f9fafb;
+  color: #0f172a;
+  transition: all 0.15s ease;
+}
+
+.share-button:hover {
+  background: #e0e7ff;
+  transform: translateY(-1px);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+/* Brand colors */
+.share-button.fb i { color: #1877F2; }
+.share-button.x i { color: #000000; }
+.share-button.linkedin i { color: #0A66C2; }
+.share-button.whatsapp i { color: #25D366; }
+.share-button.telegram i { color: #0088CC; }
+.share-button.copylink i { color: #475569; }
+
+body.dark .share-button {
+  background: #334155;
+  border-color: #475569;
+  color: #e2e8f0;
+}
+
+body.dark .share-button:hover {
+  background: #475569;
+}
+
+
+.github-repo-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.repo-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  color: #111827;
+  transition: all 0.15s ease;
+}
+
+.repo-btn:hover {
+  background: #e0e7ff;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.repo-btn i {
+  font-size: 18px;
+  color: #000;
+}
+
+/* Dark mode support */
+body.dark .repo-btn {
+  background: #334155;
+  border-color: #475569;
+  color: #e2e8f0;
+}
+
+body.dark .repo-btn:hover {
+  background: #475569;
+}
+
+body.dark .repo-btn i {
+  color: #e2e8f0;
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ka">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ka ⇄ Eng კონვერტორი</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta
+      name="description"
+      content="ქარ ⇄ Eng ავტომატური კლავიატურის კონვერტორი. ჩაწერეთ ტექსტი აკრებილი არასწორი კლავიატურით და მიიღეთ სწორი შედეგი. ავტომატური დაკოპირება, სწრაფი და მარტივი ინსტრუმენტი."
+    />
+    <meta
+      name="keywords"
+      content="ქართული კლავიატურა, translit, transliteration, ქარ eng, eng ქარ, ka eng, eng ka, georgian keyboard, keyboard converter, georgian translit, ქართული ტექსტის კონვერტაცია, typing converter, ვახტანგი აბაშიძე, ვახტანგ აბაშიძე"
+    />
+    <meta name="author" content="ვახტანგი აბაშიძე" />
+    <meta name="author" content="ვახტანგ აბაშიძე" />
+    <!-- LANGUAGE -->
+    <link rel="alternate" hreflang="ka" href="YOUR_GITHUB_PAGES_URL_HERE" />
+
+    <!-- OPEN GRAPH (Facebook, Messenger, LinkedIn) -->
+    <meta
+      property="og:title"
+      content="Ka ⇄ Eng კლავიატურის ავტომატური კონვერტორი"
+    />
+    <meta
+      property="og:description"
+      content="ჩაწერეთ ტექსტი აკრებილი არასწორი კლავიატურით და მიიღეთ სწორი შედეგი. Ka ⇄ Eng ავტომატური კონვერტაცია და მეხსიერებაში კოპირება."
+    />
+    <meta property="og:url" content="YOUR_GITHUB_PAGES_URL_HERE" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ka_GE" />
+    <meta property="og:image" content="YOUR_LOGO_OR_PREVIEW_IMAGE_URL" />
+
+    <!-- TWITTER CARD -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="ქარ ⇄ Eng კლავიატურის ავტომატური კონვერტორი"
+    />
+    <meta
+      name="twitter:description"
+      content="ქარ ⇄ Eng ტექსტის ავტომატური გამოსწორება, კლიპბორდში დაკოპირება და სწრაფი კონვერტაცია."
+    />
+    <meta name="twitter:image" content="YOUR_LOGO_OR_PREVIEW_IMAGE_URL" />
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <!-- Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Brand Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="top-block">
+        <h1>Ka ⇄ Eng ტექსტის კონვერტორი</h1>
+        <div class="version">ვერსია 1.0.0</div>
+        <div class="top-meta">
+          © <span id="year"></span> ვახტანგ აბაშიძე — ყველა უფლება დაცულია.
+        </div>
+
+        <button id="themeToggle" class="theme-toggle">🌙</button>
+      </div>
+
+      <div class="hint">
+        ჩასვით ტექსტი, რომელიც შეცდომით ქართულად ან ინგლისურად აიკრიბა.<br />
+        სისტემა ავტომატურად განსაზღვრავს ენას და დააკონვერტირებს.
+      </div>
+
+      <div class="row">
+        <div class="label-with-button">
+          <label for="inputText">შეიყვანეთ ტექსტი</label>
+          <button id="pasteBtn" class="paste-btn">ჩასმა</button>
+        </div>
+
+        <textarea
+          id="inputText"
+          placeholder="მაგალითად:&#10; აპპლე → apple&#10; vaSli → ვაშლი"
+        ></textarea>
+      </div>
+
+      <div class="row">
+        <label for="outputText">შედეგი</label>
+        <textarea id="outputText" readonly></textarea>
+      </div>
+
+      <div class="status-row">
+        <div class="status" id="status">
+          შედეგი ავტომატურად დაკოპირდება მეხსიერებაში.
+        </div>
+
+        <a
+          href="https://github.com/Lupusa87/KaEngConverter"
+          target="_blank"
+          class="repo-btn"
+        >
+          <i class="fa-brands fa-github"></i> GitHub Repo
+        </a>
+      </div>
+
+      <!-- Profile Section -->
+      <section class="profile">
+        <div class="profile-header">
+          <div class="avatar-circle">VA</div>
+          <div>
+            <div class="profile-name">
+              ვახტანგ აბაშიძე - Vakhtangi Abashidze
+            </div>
+            <div class="profile-description">
+              დამოუკიდებელი დეველოპერი - მობილური · ვები · Backend · TypeScript
+              · React Native · Expo.
+            </div>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a
+            class="social-button email"
+            href="mailto:VakhtangiAbashidze@gmail.com"
+          >
+            <span class="material-icons">email</span>
+            ელ-ფოსტა
+          </a>
+
+          <a
+            class="social-button youtube"
+            href="https://www.youtube.com/@vakhtangiabashidze8559"
+            target="_blank"
+          >
+            <i class="fa-brands fa-youtube"></i>
+            YouTube
+          </a>
+
+          <a
+            class="social-button linkedin"
+            href="https://www.linkedin.com/in/vakhtangi-abashidze-652887140"
+            target="_blank"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+            LinkedIn
+          </a>
+
+          <a
+            class="social-button github"
+            href="https://www.github.com/Lupusa87"
+            target="_blank"
+          >
+            <i class="fa-brands fa-github"></i>
+            GitHub
+          </a>
+
+          <a
+            class="social-button facebook"
+            href="https://www.facebook.com/share/1JAEXpjttU/?mibextid=wwXIfr"
+            target="_blank"
+          >
+            <i class="fa-brands fa-facebook"></i>
+            Facebook
+          </a>
+        </div>
+      </section>
+      <section>
+        <div class="share-title">გააზიარე:</div>
+
+        <div class="share-links">
+          <a class="share-button fb" target="_blank">
+            <i class="fa-brands fa-facebook"></i> Facebook
+          </a>
+
+          <a class="share-button x" target="_blank">
+            <i class="fa-brands fa-x-twitter"></i> X
+          </a>
+
+          <a class="share-button linkedin" target="_blank">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+
+          <a class="share-button whatsapp" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+          </a>
+
+          <a class="share-button telegram" target="_blank">
+            <i class="fa-brands fa-telegram"></i> Telegram
+          </a>
+
+          <a class="share-button copylink">
+            <i class="fa-solid fa-link"></i> ბმულის კოპირება
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <!-- External JS -->
+    <script src="script.js"></script>
+  </body>
+</html>
