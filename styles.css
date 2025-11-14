@@ -98,6 +98,10 @@ body.dark .status {
   font-size: 0.95rem;
 }
 
+body.dark .views {
+  color: #67e8f9;
+}
+
 /* label + ჩასმა ღილაკი ერთ ხაზზე */
 .label-with-button {
   display: flex;
