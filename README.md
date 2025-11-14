@@ -37,6 +37,6 @@ React Native • TypeScript • Expo • JavaScript
 
 
 
-##📜 License
+## 📜 License
 
 MIT License — თავისუფალი გამოყენება და გავრცელება.
