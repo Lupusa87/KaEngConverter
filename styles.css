@@ -1,57 +1,208 @@
-/* ძირითადი სტილები */
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  margin: 0;
-  padding: 20px;
-  background: #f5f5f5;
-  color: #0f172a;
+/* ============================================================================
+   CSS CUSTOM PROPERTIES (Variables)
+   ============================================================================ */
+
+:root {
+  /* Colors - Light Theme */
+  --color-primary: #1d4ed8;
+  --color-primary-hover: #1e40af;
+  --color-success: #10b981;
+  --color-success-hover: #059669;
+  --color-info: #0ea5e9;
+  --color-info-hover: #0284c7;
+  
+  /* Background Colors */
+  --bg-body: #f5f5f5;
+  --bg-container: #ffffff;
+  --bg-input: #ffffff;
+  --bg-input-readonly: #f9fafb;
+  --bg-button: #f9fafb;
+  --bg-button-hover: #e0e7ff;
+  
+  /* Text Colors */
+  --text-primary: #0f172a;
+  --text-secondary: #4b5563;
+  --text-muted: #6b7280;
+  --text-on-primary: #ffffff;
+  
+  /* Border Colors */
+  --border-color: #cbd5e1;
+  --border-subtle: #e5e7eb;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 2px 10px rgba(0, 0, 0, 0.1);
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-full: 999px;
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.2s ease;
 }
+
+/* Dark Theme Variables */
+body.dark {
+  --bg-body: #0f172a;
+  --bg-container: #1e293b;
+  --bg-input: #0f172a;
+  --bg-input-readonly: #1e293b;
+  --bg-button: #334155;
+  --bg-button-hover: #475569;
+  
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-muted: #94a3b8;
+  
+  --border-color: #334155;
+  --border-subtle: #475569;
+  
+  --shadow-md: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================================================
+   RESET & BASE STYLES
+   ============================================================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", 
+               "Roboto", "Oxygen", "Ubuntu", "Cantarell", sans-serif;
+  margin: 0;
+  padding: var(--spacing-lg);
+  background: var(--bg-body);
+  color: var(--text-primary);
+  line-height: 1.6;
+  transition: background-color var(--transition-normal),
+              color var(--transition-normal);
+}
+
+/* ============================================================================
+   LAYOUT
+   ============================================================================ */
 
 .container {
- 
   max-width: 700px;
   margin: 0 auto;
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  background: var(--bg-container);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  transition: background-color var(--transition-normal),
+              box-shadow var(--transition-normal);
 }
 
-/* ზედა ბლოკი: სათაური, ვერსია, ავტორი */
+/* ============================================================================
+   HEADER SECTION
+   ============================================================================ */
+
 .top-block {
   text-align: center;
   margin-bottom: 0.75rem;
 }
 
 h1 {
-  font-size: 1.4rem;
-  margin-top: 0;
-  margin-bottom: 0.25rem;
-  color: #1d4ed8; /* ოდნავ უფრო კაშკაშა ლურჯი სათაურისთვის */
+  font-size: clamp(1.25rem, 3vw, 1.4rem);
+  margin: 0 0 var(--spacing-xs);
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+body.dark h1 {
+  color: var(--text-primary);
 }
 
 .version {
   font-size: 0.85rem;
-  color: #4b5563;
+  color: var(--text-secondary);
   margin-top: 0.8rem;
 }
 
 .top-meta {
   font-size: 0.8rem;
-  color: #6b7280;
+  color: var(--text-muted);
   margin-top: 0.8rem;
 }
 
+/* ============================================================================
+   THEME TOGGLE
+   ============================================================================ */
+
+.theme-toggle {
+  margin-top: 15px;
+  background: var(--bg-button);
+  border: none;
+  padding: 3px 6px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: all var(--transition-normal);
+}
+
+.theme-toggle:hover {
+  background: var(--border-color);
+  transform: translateY(-1px);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ============================================================================
+   CONVERTER SECTION
+   ============================================================================ */
+
 .hint {
   font-size: 0.9rem;
-  color: #4b5563;
-  margin-bottom: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: var(--bg-input-readonly);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--color-primary);
+}
+
+.row {
+  margin-bottom: var(--spacing-lg);
+}
+
+.label-with-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+  margin-bottom: var(--spacing-sm);
+}
+
+.button-group {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
 }
 
 label {
   font-weight: 600;
-  margin-bottom: 0.25rem;
-  display: block;
+  color: var(--color-primary);
+  font-size: 0.95rem;
+}
+
+body.dark label {
+  color: var(--text-primary);
 }
 
 textarea {
@@ -61,97 +212,133 @@ textarea {
   padding: 10px;
   font-family: inherit;
   font-size: 1rem;
-  border-radius: 8px;
-  border: 1px solid #cbd5e1;
-  box-sizing: border-box;
-  color: #0f172a;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background: var(--bg-input);
+  color: var(--text-primary);
+  transition: border-color var(--transition-fast),
+              background-color var(--transition-normal);
+}
+
+textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.1);
+}
+
+body.dark textarea:focus {
+  box-shadow: 0 0 0 3px rgba(226, 232, 240, 0.1);
 }
 
 textarea[readonly] {
-  background: #f9fafb;
+  background: var(--bg-input-readonly);
+  cursor: default;
 }
 
-.row {
-  margin-bottom: 1.5rem;
+/* ============================================================================
+   BUTTONS
+   ============================================================================ */
+
+.paste-btn {
+  background: var(--color-success);
+  color: var(--text-on-primary);
+  border: none;
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
 }
 
-.status {
-  font-size: 0.85rem;
-  color: #059669; /* მწვანე ტექსტი */
-  min-height: 1em;
+.paste-btn:hover {
+  background: var(--color-success-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
 }
+
+.paste-btn:active {
+  transform: translateY(0);
+}
+
+.paste-btn:focus-visible {
+  outline: 2px solid var(--color-success);
+  outline-offset: 2px;
+}
+
+body.dark .paste-btn {
+  background: var(--color-info);
+}
+
+body.dark .paste-btn:hover {
+  background: var(--color-info-hover);
+}
+
+/* ============================================================================
+   STATUS ROW
+   ============================================================================ */
 
 .status-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: -8px; /* optional: pulls it closer */
-  margin-bottom: 16px;
+  gap: var(--spacing-md);
+  margin-top: -8px;
+  margin-bottom: var(--spacing-md);
+  flex-wrap: wrap;
 }
 
-body.dark .status {
-  color: #67e8f9;
-}
 
 .views {
-  color: darkblue;
+  color: var(--color-primary);
   font-size: 0.95rem;
+  font-weight: 500;
 }
 
 body.dark .views {
   color: #67e8f9;
 }
 
-/* label + ჩასმა ღილაკი ერთ ხაზზე */
-.label-with-button {
-  display: flex;
+.repo-btn {
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 8px;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  text-decoration: none;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-button);
+  color: var(--text-primary);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
 }
 
-.label-with-button label {
-  color: #1d4ed8; /* dark blue */
-}
-
-body.dark .label-with-button label {
-  color: #e2e8f0; 
-}
-
-
-.row > label {
-  color: #1d4ed8; /* dark blue */
-}
-
-body.dark .row > label {
-  color: #e2e8f0; 
-}
-
-/* ჩასმა ღილაკი */
-.paste-btn {
-  background: #10b981;
-  color: white;
-  border: none;
-  padding: 4px 12px;
-  margin-bottom: 4px;
-  font-size: 0.8rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.15s ease, transform 0.1s ease;
-}
-
-.paste-btn:hover {
-  background: #059669;
+.repo-btn:hover {
+  background: var(--bg-button-hover);
   transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
 }
 
-/* პროფილის სექცია */
+.repo-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.repo-btn i {
+  font-size: 18px;
+}
+
+/* ============================================================================
+   PROFILE SECTION
+   ============================================================================ */
 
 .profile {
   margin-top: 24px;
   padding-top: 18px;
-  border-top: 1px solid #e5e7eb;
-  margin-bottom: 0; /* reduce bottom spacing */
+  border-top: 1px solid var(--border-subtle);
+  margin-bottom: 0;
   padding-bottom: 0;
 }
 
@@ -164,12 +351,13 @@ body.dark .row > label {
 .avatar-circle {
   width: 48px;
   height: 48px;
+  min-width: 48px;
   border-radius: 50%;
   background: linear-gradient(135deg, #2563eb, #4f46e5);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: var(--text-on-primary);
   font-weight: 700;
   font-size: 1.1rem;
 }
@@ -177,267 +365,239 @@ body.dark .row > label {
 .profile-name {
   font-weight: 600;
   font-size: 1rem;
-  color: darkblue;
+  color: var(--color-primary);
+}
+
+body.dark .profile-name {
+  color: var(--text-primary);
 }
 
 .profile-description {
   font-size: 0.9rem;
-  color: #4b5563;
+  color: var(--text-secondary);
   margin-top: 2px;
   margin-bottom: 14px;
 }
 
-.social-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 15px;
-  justify-content: center; 
-}
+/* ============================================================================
+   SOCIAL & SHARE LINKS
+   ============================================================================ */
 
-.social-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  text-decoration: none;
-  border: 1px solid #e5e7eb;
-  color: #111827;
-  background: #f9fafb;
-  transition: all 0.15s ease;
-  justify-content: center; 
-}
-
-.social-button:hover {
-  background: #e0e7ff;
-  transform: translateY(-1px);
-  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-}
-
-.material-icons {
-  font-size: 18px;
-}
-
-/* ბრენდის ფერები */
-.social-button.youtube i {
-  color: #FF0000;
-}
-
-.social-button.linkedin i {
-  color: #0A66C2;
-}
-
-.social-button.github i {
-  color: #000000;
-}
-
-.social-button.facebook i {
-  color: #1877F2;
-}
-
-.social-button.email .material-icons {
-  color: #0284C7; /* ცისფერი ელფოსტისთვის */
-}
-
-.social-button i.fa-brands {
-  font-size: 18px;
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding: 16px;
-  }
-}
-
-/* 🌙 თემა — Dark Mode */
-body.dark {
-  background: #0f172a;
-  color: #e2e8f0;
-}
-
-body.dark .container {
-  background: #1e293b;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
-}
-
-body.dark textarea {
-  background: #0f172a;
-  border-color: #334155;
-  color: #e2e8f0;
-}
-
-body.dark textarea[readonly] {
-  background: #1e293b;
-}
-
-body.dark h1 {
-  color: #e2e8f0; /* very light gray / almost white */
-}
-
-body.dark .profile-name {
-  color: #e2e8f0; /* very light gray / almost white */
-}
-
-
-body.dark .hint,
-body.dark .profile-description,
-body.dark .version,
-body.dark .top-meta {
-  color: #94a3b8;
-}
-
-body.dark .social-button {
-  background: #334155;
-  color: #e2e8f0;
-  border-color: #475569;
-}
-
-body.dark .social-button:hover {
-  background: #475569;
-}
-
-body.dark .paste-btn {
-  background: #0ea5e9;
-}
-
-body.dark .paste-btn:hover {
-  background: #0284c7;
-}
-
-
-
-
-/* 🌗 Toggle button style */
-.theme-toggle {
-  margin-top: 15px;
-  background: #f1f3f5;
-  border: none;
-  padding: 3px 6px;
-  border-radius: 12px;
-  cursor: pointer;
-  font-size: 1.5rem;
-  transition: all 0.2s ease;
-}
-
-.theme-toggle:hover {
-  background: #cbd5e1;
-  transform: translateY(-1px);
-}
-
-body.dark .theme-toggle {
-  background: #334155;
-  color: #e2e8f0;
-}
-
-body.dark .theme-toggle:hover {
-  background: #475569;
-}
-
-
-.share-title {
-  margin-top: 30px;
-   margin-bottom: 20px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  color:darkblue;
-}
-
-body.dark .share-title {
-  color: #e2e8f0;
-}
-
+.social-links,
 .share-links {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 8px;
-  margin-bottom: 0;
+  margin-top: 15px;
+  justify-content: center;
 }
 
+.social-button,
 .share-button {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   padding: 6px 12px;
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   font-size: 0.85rem;
   text-decoration: none;
-  border: 1px solid #e5e7eb;
-  cursor: pointer;
-  background: #f9fafb;
-  color: #0f172a;
-  transition: all 0.15s ease;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  background: var(--bg-button);
+  transition: all var(--transition-fast);
+  justify-content: center;
+  white-space: nowrap;
 }
 
+.social-button:hover,
 .share-button:hover {
-  background: #e0e7ff;
+  background: var(--bg-button-hover);
   transform: translateY(-1px);
-  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  box-shadow: var(--shadow-sm);
 }
 
-/* Brand colors */
-.share-button.fb i { color: #1877F2; }
-.share-button.x i { color: #000000; }
+.social-button:focus-visible,
+.share-button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Icon Sizes */
+.material-icons,
+.social-button i,
+.share-button i {
+  font-size: 18px;
+}
+
+/* Brand Colors for Icons */
+.social-button.youtube i,
+.share-button.youtube i { color: #FF0000; }
+
+.social-button.linkedin i,
 .share-button.linkedin i { color: #0A66C2; }
+
+.social-button.github i,
+.share-button.github i { color: #000000; }
+
+.social-button.facebook i,
+.share-button.fb i { color: #1877F2; }
+
+.social-button.email .material-icons { color: #0284C7; }
+
+.share-button.x i { color: #000000; }
 .share-button.whatsapp i { color: #25D366; }
 .share-button.telegram i { color: #0088CC; }
 .share-button.copylink i { color: #475569; }
 
-body.dark .share-button {
-  background: #334155;
-  border-color: #475569;
+body.dark .social-button.github i,
+body.dark .share-button.github i {
   color: #e2e8f0;
 }
 
-body.dark .share-button:hover {
-  background: #475569;
+body.dark .share-button.x i {
+  color: #e2e8f0;
 }
 
+/* ============================================================================
+   SHARE SECTION
+   ============================================================================ */
 
-.github-repo-button {
-  display: flex;
-  justify-content: center;
-  margin-top: 16px;
+.share-section {
+  margin-top: 30px;
 }
 
-.repo-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 16px;
-  border-radius: 999px;
-  font-size: 0.9rem;
+.share-title {
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-primary);
+}
+
+body.dark .share-title {
+  color: var(--text-primary);
+}
+
+/* ============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================ */
+
+@media (max-width: 640px) {
+  body {
+    padding: var(--spacing-md);
+  }
+  
+  .container {
+    padding: var(--spacing-md);
+  }
+  
+  .label-with-button {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .button-group {
+    width: 100%;
+  }
+  
+  .paste-btn {
+    flex: 1;
+    justify-content: center;
+  }
+  
+  .status-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--spacing-sm);
+  }
+  
+  .views,
+  .repo-btn {
+    text-align: center;
+  }
+  
+  .social-links,
+  .share-links {
+    justify-content: stretch;
+  }
+  
+  .social-button,
+  .share-button {
+    flex: 1 1 auto;
+    min-width: calc(50% - 5px);
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+  
+  .hint {
+    font-size: 0.85rem;
+  }
+  
+  textarea {
+    font-size: 0.95rem;
+  }
+}
+
+/* ============================================================================
+   PRINT STYLES
+   ============================================================================ */
+
+@media print {
+  body {
+    background: white;
+    padding: 0;
+  }
+  
+  .container {
+    box-shadow: none;
+  }
+  
+  .theme-toggle,
+  .paste-btn,
+  .share-section,
+  .social-links,
+  .views,
+  .repo-btn {
+    display: none;
+  }
+}
+
+/* ============================================================================
+   ACCESSIBILITY
+   ============================================================================ */
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus visible styles */
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Skip to main content link (if added) */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-primary);
+  color: white;
+  padding: 8px;
   text-decoration: none;
-  border: 1px solid #e5e7eb;
-  background: #f9fafb;
-  color: #111827;
-  transition: all 0.15s ease;
+  z-index: 100;
 }
 
-.repo-btn:hover {
-  background: #e0e7ff;
-  transform: translateY(-1px);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-}
-
-.repo-btn i {
-  font-size: 18px;
-  color: #000;
-}
-
-/* Dark mode support */
-body.dark .repo-btn {
-  background: #334155;
-  border-color: #475569;
-  color: #e2e8f0;
-}
-
-body.dark .repo-btn:hover {
-  background: #475569;
-}
-
-body.dark .repo-btn i {
-  color: #e2e8f0;
+.skip-link:focus {
+  top: 0;
 }
