@@ -154,7 +154,6 @@
             class="topGeCounter"
             data-site-id="118368"
           >
-            top.ge
           </div>
 
           <!-- Visitor Counter -->
@@ -201,16 +200,6 @@
           </a>
 
           <a
-            class="social-button linkedin"
-            href="https://www.linkedin.com/in/vakhtangi-abashidze-652887140"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Visit LinkedIn profile"
-          >
-            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-          </a>
-
-          <a
             class="social-button github"
             href="https://www.github.com/Lupusa87"
             target="_blank"
@@ -228,6 +217,25 @@
             aria-label="Visit Facebook profile"
           >
             <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+          </a>
+
+          <a
+            class="social-button x"
+            href="https://x.com/lupusa1"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit X (Twitter) profile"
+          >
+            <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+          </a>
+          <a
+            class="social-button linkedin"
+            href="https://www.linkedin.com/in/vakhtangi-abashidze-652887140"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit LinkedIn profile"
+          >
+            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
           </a>
         </nav>
       </section>
@@ -297,5 +305,11 @@
 
     <!-- Main JavaScript -->
     <script src="script.js"></script>
+
+   <script>
+  if (location.protocol === "file:") {
+    document.getElementById("top-ge-counter-container").innerHTML = "Top.ge";
+  }
+</script>
   </body>
 </html>
