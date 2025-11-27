@@ -1,0 +1,70 @@
+/* Share buttons styles (uses main CSS variables so dark mode works) */
+.share-section {
+  margin-top: 10px;
+}
+
+.share-title {
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-primary);
+}
+
+.share-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Make share buttons visually consistent with the rest of the site */
+.share-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  text-decoration: none;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  background: var(--bg-button);
+  transition: all var(--transition-fast);
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.share-button i { font-size: 18px; }
+
+.share-button:hover {
+  background: var(--bg-button-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.share-button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Brand/icon colors (kept) */
+.share-button.fb { color: #1877F2; }
+.share-button.x { color: #1DA1F2; }
+.share-button.linkedin { color: #0077B5; }
+.share-button.whatsapp { color: #25D366; }
+.share-button.telegram { color: #2AABEE; }
+.share-button.copylink { background: #f3f4f6; }
+
+/* Dark mode adjustments rely on the same variables as the site */
+body.dark .share-button {
+  background: var(--bg-button);
+  color: var(--text-primary);
+  border-color: var(--border-subtle);
+}
+
+body.dark .share-button.x i {
+  color: #e2e8f0; /* lighter icon color on dark */
+}
+
+.share-placeholder { margin-top: 1rem; }

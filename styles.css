@@ -133,12 +133,6 @@ body.dark h1 {
   color: var(--text-primary);
 }
 
-.version {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  margin-top: 0.8rem;
-}
-
 .top-meta {
   font-size: 0.8rem;
   color: var(--text-muted);
@@ -357,153 +351,6 @@ body.dark .views {
 }
 
 /* ============================================================================
-   PROFILE SECTION
-   ============================================================================ */
-
-.profile {
-  margin-top: 24px;
-  padding-top: 18px;
-  border-top: 1px solid var(--border-subtle);
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-.profile-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.avatar-circle {
-  width: 48px;
-  height: 48px;
-  min-width: 48px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #2563eb, #4f46e5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-on-primary);
-  font-weight: 700;
-  font-size: 1.1rem;
-}
-
-.profile-name {
-  font-weight: 600;
-  font-size: 1rem;
-  color: var(--color-primary);
-}
-
-body.dark .profile-name {
-  color: var(--text-primary);
-}
-
-.profile-description {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  margin-top: 2px;
-  margin-bottom: 14px;
-}
-
-/* ============================================================================
-   SOCIAL & SHARE LINKS
-   ============================================================================ */
-
-.social-links,
-.share-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 5px;
-  justify-content: center;
-}
-
-.social-button,
-.share-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  border-radius: var(--radius-full);
-  font-size: 0.85rem;
-  text-decoration: none;
-  border: 1px solid var(--border-subtle);
-  color: var(--text-primary);
-  background: var(--bg-button);
-  transition: all var(--transition-fast);
-  justify-content: center;
-  white-space: nowrap;
-}
-
-.social-button:hover,
-.share-button:hover {
-  background: var(--bg-button-hover);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-sm);
-}
-
-.social-button:focus-visible,
-.share-button:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
-}
-
-/* Icon Sizes */
-.material-icons,
-.social-button i,
-.share-button i {
-  font-size: 18px;
-}
-
-/* Brand Colors for Icons */
-.social-button.youtube i,
-.share-button.youtube i { color: #FF0000; }
-
-.social-button.linkedin i,
-.share-button.linkedin i { color: #0A66C2; }
-
-.social-button.github i,
-.share-button.github i { color: #000000; }
-
-.social-button.facebook i,
-.share-button.fb i { color: #1877F2; }
-
-.social-button.email .material-icons { color: #0284C7; }
-
-.share-button.x i { color: #000000; }
-.share-button.whatsapp i { color: #25D366; }
-.share-button.telegram i { color: #0088CC; }
-.share-button.copylink i { color: #475569; }
-
-body.dark .social-button.github i,
-body.dark .share-button.github i {
-  color: #e2e8f0;
-}
-
-body.dark .share-button.x i {
-  color: #e2e8f0;
-}
-
-/* ============================================================================
-   SHARE SECTION
-   ============================================================================ */
-
-.share-section {
-  margin-top: 10px;
-}
-
-.share-title {
-  margin-bottom: 12px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: var(--color-primary);
-}
-
-body.dark .share-title {
-  color: var(--text-primary);
-}
-
-/* ============================================================================
    RESPONSIVE DESIGN
    ============================================================================ */
 
@@ -555,17 +402,6 @@ body.dark .share-title {
   .views,
   .repo-btn {
     text-align: center;
-  }
-  
-  .social-links,
-  .share-links {
-    justify-content: stretch;
-  }
-  
-  .social-button,
-  .share-button {
-    flex: 1 1 auto;
-    min-width: calc(50% - 5px);
   }
 }
 

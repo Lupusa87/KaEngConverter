@@ -71,6 +71,8 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="sharebuttons/styles.css" />
+    <link rel="stylesheet" href="profile/styles.css" />
   </head>
 
   <body>
@@ -163,147 +165,16 @@
         </div>
       </main>
 
-      <!-- Profile Section -->
-      <section class="profile">
-        <div class="profile-header">
-          <div class="avatar-circle" aria-hidden="true">VA</div>
-          <div>
-            <div class="profile-name">
-              ვახტანგ აბაშიძე - Vakhtangi Abashidze
-            </div>
-            <div class="profile-description">
-              დამოუკიდებელი დეველოპერი - მობილური · ვები · Backend · TypeScript
-              · React Native · Expo.
-            </div>
-          </div>
-        </div>
+      <div id="profile-container" class="profile-placeholder" aria-live="polite"></div>
 
-        <!-- Social Links -->
-        <nav class="social-links" aria-label="Social media links">
-          <a
-            class="social-button email"
-            href="mailto:VakhtangiAbashidze@gmail.com"
-            aria-label="Send email"
-          >
-            <span class="material-icons" aria-hidden="true">email</span>
-            ელ-ფოსტა
-          </a>
-
-          <a
-            class="social-button youtube"
-            href="https://www.youtube.com/@vakhtangiabashidze8559"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Visit YouTube channel"
-          >
-            <i class="fa-brands fa-youtube" aria-hidden="true"></i>
-          </a>
-
-          <a
-            class="social-button github"
-            href="https://www.github.com/Lupusa87"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Visit GitHub profile"
-          >
-            <i class="fa-brands fa-github" aria-hidden="true"></i>
-          </a>
-
-          <a
-            class="social-button facebook"
-            href="https://www.facebook.com/share/1JAEXpjttU/?mibextid=wwXIfr"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Visit Facebook profile"
-          >
-            <i class="fa-brands fa-facebook" aria-hidden="true"></i>
-          </a>
-
-          <a
-            class="social-button x"
-            href="https://x.com/lupusa1"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Visit X (Twitter) profile"
-          >
-            <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
-          </a>
-          <a
-            class="social-button linkedin"
-            href="https://www.linkedin.com/in/vakhtangi-abashidze-652887140"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Visit LinkedIn profile"
-          >
-            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-          </a>
-        </nav>
-      </section>
-
-      <!-- Share Section -->
-      <section class="share-section">
-        <h2 class="share-title">გააზიარე:</h2>
-        <nav class="share-links" aria-label="Share on social media">
-          <a
-            class="share-button fb"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Share on Facebook"
-          >
-            <i class="fa-brands fa-facebook" aria-hidden="true"></i>
-          </a>
-
-          <a
-            class="share-button x"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Share on X (Twitter)"
-          >
-            <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
-          </a>
-
-          <a
-            class="share-button linkedin"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Share on LinkedIn"
-          >
-            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-          </a>
-
-          <a
-            class="share-button whatsapp"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Share on WhatsApp"
-          >
-            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-          </a>
-
-          <a
-            class="share-button telegram"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Share on Telegram"
-          >
-            <i class="fa-brands fa-telegram" aria-hidden="true"></i>
-          </a>
-
-          <a
-            class="share-button copylink"
-            href="#"
-            aria-label="Copy link to clipboard"
-          >
-            <i class="fa-solid fa-link" aria-hidden="true"></i>
-            ბმულის კოპირება
-          </a>
-        </nav>
-      </section>
+      <div id="share-container" class="share-placeholder" aria-live="polite"></div>
     </div>
 
     <script async src="//counter.top.ge/counter.js"></script>
 
     <!-- Main JavaScript -->
+    <script src="profile/script.js" defer></script>
+    <script src="sharebuttons/script.js" defer></script>
     <script src="script.js"></script>
 
    <script>
