@@ -238,7 +238,9 @@ async function updateVisitorCount() {
 
   counterEl.textContent = "...";
 
+
   const payload = {
+    project: "kaengconverter",
     domain: window.location.hostname, // "lupusa87.github.io" in prod, "localhost" in dev
     timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
     page_path: window.location.pathname,
