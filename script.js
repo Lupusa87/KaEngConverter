@@ -238,10 +238,17 @@ async function updateVisitorCount() {
 
   counterEl.textContent = "...";
 
+  const hostName = window.location.hostname;
+  const domain =
+  hostName === "localhost" ||
+  hostName === "127.0.0.1" ||
+  hostName === ""
+    ? "vakhtangi-kaenconverter-local"
+    : "kaenconverter-main-page";
 
   const payload = {
     project: "kaengconverter",
-    domain: window.location.hostname, // "lupusa87.github.io" in prod, "localhost" in dev
+    domain: domain,
     timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
     page_path: window.location.pathname,
     page_title: document.title,
